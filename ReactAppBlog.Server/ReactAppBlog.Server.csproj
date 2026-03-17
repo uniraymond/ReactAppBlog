@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
@@ -14,12 +14,34 @@
     <PackageReference Include="Microsoft.AspNetCore.SpaProxy">
       <Version>9.*-*</Version>
     </PackageReference>
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.4" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\reactappblog.client\reactappblog.client.esproj">
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Application\DTOs\Auth\" />
+    <Folder Include="Application\DTOs\Categories\" />
+    <Folder Include="Application\DTOs\Comments\" />
+    <Folder Include="Application\DTOs\Tags\" />
+    <Folder Include="Application\DTOs\Posts\" />
+    <Folder Include="Common\Constants\" />
+    <Folder Include="Common\Extensions\" />
+    <Folder Include="Contracts\Requests\Auth\" />
+    <Folder Include="Contracts\Requests\Catgories\" />
+    <Folder Include="Contracts\Requests\Comments\" />
+    <Folder Include="Contracts\Requests\Tags\" />
+    <Folder Include="Contracts\Requests\Posts\" />
+    <Folder Include="Contracts\Responses\Auth\" />
+    <Folder Include="Contracts\Responses\Categories\" />
+    <Folder Include="Contracts\Responses\Comments\" />
+    <Folder Include="Contracts\Responses\Tags\" />
+    <Folder Include="Contracts\Responses\Posts\" />
+    <Folder Include="Infrastructure\Persistence\Migrations\" />
   </ItemGroup>
 
 </Project>

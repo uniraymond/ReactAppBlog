@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using ReactAppBlog.Server.Infrastructure.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
 var dbConnectionString = builder.Configuration.GetConnectionString("DefaultConnection");

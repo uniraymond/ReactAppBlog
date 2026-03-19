@@ -1,5 +1,8 @@
 using Microsoft.EntityFrameworkCore;
+using ReactAppBlog.Server.Application.Interfaces;
+using ReactAppBlog.Server.Application.Services;
 using ReactAppBlog.Server.Infrastructure.Persistence;
+using ReactAppBlog.Server.Mapping;
 
 var builder = WebApplication.CreateBuilder(args);
 var dbConnectionString = builder.Configuration.GetConnectionString("DefaultConnection");
@@ -11,6 +14,8 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 
 builder.Services.AddDbContext<AppDbContext>(options => options.UseNpgsql(dbConnectionString));
+builder.Services.AddScoped<IPostService, PostService>();
+builder.Services.AddAutoMapper(typeof(PostProfile).Assembly);
 
 var app = builder.Build();
 
